@@ -47,13 +47,62 @@
             </div>
         </div>
 
+        <!-- Food Categories -->
+        <section class="food-categories-section py-5">
+            <div class="container">
+                <h2 class="text-center">Food Categories</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 1">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Category 1</h5>
+                                <p class="card-text">Description of category 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 2">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Category 2</h5>
+                                <p class="card-text">Description of category 2.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 3">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Category 3</h5>
+                                <p class="card-text">Description of category 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 4">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Category 4</h5>
+                                <p class="card-text">Description of category 4.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Menu Highlights -->
-        <section class="menu-highlights-section py-5 bg-light">
+        <section class="menu-highlights-section py-5">
             <div class="container">
                 <h2 class="text-center">Menu Highlights</h2>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 1">
                             <div class="card-body">
@@ -62,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 2">
                             <div class="card-body">
@@ -71,7 +120,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Dish 3</h5>
+                                <p class="card-text">Description of dish 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 3">
                             <div class="card-body">
@@ -88,46 +146,29 @@
             <div class="container">
                 <h2 class="text-center">Gallery</h2>
                 <div class="row">
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-3 text-center">
                         <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 1">
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-3 text-center">
                         <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 2">
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-3 text-center">
                         <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 3">
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials-section py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Testimonials</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">"Amazing food and great service!"</p>
-                                <footer class="blockquote-footer">Customer 1</footer>
-                            </div>
-                        </div>
+                    <div class="col-md-3 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 1">
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">"A wonderful dining experience."</p>
-                                <footer class="blockquote-footer">Customer 2</footer>
-                            </div>
-                        </div>
+                    <div class="col-md-3 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 2">
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">"Highly recommend this place!"</p>
-                                <footer class="blockquote-footer">Customer 3</footer>
-                            </div>
-                        </div>
+                    <div class="col-md-3 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 3">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 2">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 3">
                     </div>
                 </div>
             </div>

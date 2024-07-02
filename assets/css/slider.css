@@ -13,7 +13,7 @@
   }
   
   /* Declare heights because of positioning of img element */
-  .carousel-item {
+  .carousel-item-mod {
     height: 32rem;
   }
   
