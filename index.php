@@ -7,9 +7,4 @@ session_start();
  * and others will be redirected to the login page.
  */
 
-// Check user session exists
-if (! isset($_SESSION['username'])) {
-    header('Location: /pages/public');
-} else {
-    header('Location: /pages/dashboard');
-}
+header('Location: /pages/public');
