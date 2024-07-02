@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
 
-<?php include './../shared/public/head.php'; ?>
+<?php include './../components/public/head.php'; ?>
 
 <body>
 
     <div class="container">
 
-        <?php include './../shared/public/navbar.php'; ?>
+        <?php include './../components/public/navbar.php'; ?>
 
     </div>
 
     <main class="container">
       
-        <?php include './../shared/public/slider.php'; ?>
+        <?php include './../components/public/slider.php'; ?>
 
         <div class="row mb-2">
             <div class="col-md-6">
@@ -221,10 +221,10 @@
 
     </main>
 
-<?php include './../shared/public/footer.php'; ?>
+<?php include './../components/public/footer.php'; ?>
 
 
-<?php include './../shared/public/scripts.php'; ?>
+<?php include './../components/public/scripts.php'; ?>
 </body>
 
 </html>

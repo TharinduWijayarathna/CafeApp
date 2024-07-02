@@ -62,7 +62,7 @@ session_start();
         <div class="d-flex justify-content-center">
             <div class="col-4 w-100">
                 
-                <?php include './../shared/alert.php'; ?>
+                <?php include './../components/alert.php'; ?>
 
                 <h1>Staff Registration</h1>
 

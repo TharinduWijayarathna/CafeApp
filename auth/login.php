@@ -41,7 +41,7 @@ session_start();
   <main class="form-signin">
     <div class="d-flex justify-content-center">
         <div class="col-4 w-100">
-            <?php include './../shared/alert.php'; ?>
+            <?php include './../components/alert.php'; ?>
 
             <form action="process.php?login=true" method="POST">
               <h1 class="h3 mb-3 fw-normal">Staff Login</h1>

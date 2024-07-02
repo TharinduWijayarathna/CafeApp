@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
 
-<?php include './../shared/admin/head.php'; ?>
+<?php include './../components/admin/head.php'; ?>
 
 <body>
 
-    <?php include './../shared/admin/navbar.php'; ?>
+    <?php include './../components/admin/navbar.php'; ?>
 
     <div class="container-fluid">
         <div class="row">
 
-            <?php include './../shared/admin/sidebar.php'; ?>
+            <?php include './../components/admin/sidebar.php'; ?>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -157,12 +157,12 @@
                 </div>
             </main>
 
-            <?php include './../shared/admin/footer.php'; ?>
+            <?php include './../components/admin/footer.php'; ?>
         </div>
     </div>
 
 
-    <?php include './../shared/admin/scripts.php'; ?>
+    <?php include './../components/admin/scripts.php'; ?>
 </body>
 
 </html>

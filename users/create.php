@@ -18,10 +18,10 @@ if (! isset($_SESSION['username'])) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<?php include './../shared/navbar.php'; ?>
+<?php include './../components/navbar.php'; ?>
 
 <div class="container-lg mt-4">
-    <?php include './../shared/alert.php'; ?>
+    <?php include './../components/alert.php'; ?>
 
     <nav class="d-flex align-items-center justify-content-between" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">

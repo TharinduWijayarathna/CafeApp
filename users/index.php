@@ -18,10 +18,10 @@ if (! isset($_SESSION['username'])) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<?php include './../shared/navbar.php'; ?>
+<?php include './../components/navbar.php'; ?>
 
 <div class="container-lg mt-4">
-    <?php include './../shared/alert.php'; ?>
+    <?php include './../components/alert.php'; ?>
 
     <div class="mb-3 d-flex justify-content-between">
         <h1 class="fs-2">Users</h1>
