@@ -67,9 +67,6 @@ session_start();
                 <h1>Staff Registration</h1>
 
                 <form method="post" action="process.php?register=true">
-                    <label for="username">User ID:</label>
-                    <input type="text" name="user_id" pattern="U\d{3}" title="User ID should be in the format U001" class="form-control" required>
-                    
                     <label for="email">Email:</label>
                     <input type="email" name="email" class="form-control" required>
 

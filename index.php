@@ -9,7 +9,7 @@ session_start();
 
 // Check user session exists
 if (! isset($_SESSION['username'])) {
-    header('Location: /auth/login.php');
+    header('Location: /public');
 } else {
-    header('Location: /books');
+    header('Location: /dashboard');
 }

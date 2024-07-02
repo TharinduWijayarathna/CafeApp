@@ -5,14 +5,13 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['register'])) {
    // Register
-    $userId = $_POST['user_id'];
     $email = $_POST['email'];
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user (user_id, email, first_name, last_name, username, password) VALUES ('$userId', '$email', '$firstName', '$lastName', '$username', '$password')";
+    $sql = "INSERT INTO user (email, first_name, last_name, username, password) VALUES ('$email', '$firstName', '$lastName', '$username', '$password')";
 
     try {
         $database->query($sql);
@@ -47,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['login'])) {
         if($isPasswordVerified) {
                 $_SESSION['username'] = $username;
 
-                header("Location: /books");
+                header("Location: /dashboard");
         } else {
                 $_SESSION['message'] = "Login failed.";
                 $_SESSION['message_type'] = "danger";

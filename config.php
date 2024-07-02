@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "Wikum@123";
-$dbname = "library_system";
+$dbname = "gallery_cafe";
 
 // Create connection
 $database = new mysqli($servername, $username, $password, $dbname);
