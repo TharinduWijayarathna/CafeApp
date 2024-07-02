@@ -9,7 +9,7 @@ session_start();
 
 // Check user session exists
 if (! isset($_SESSION['username'])) {
-    header('Location: /public');
+    header('Location: /pages/public');
 } else {
-    header('Location: /dashboard');
+    header('Location: /pages/dashboard');
 }

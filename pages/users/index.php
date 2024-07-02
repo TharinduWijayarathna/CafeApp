@@ -3,7 +3,7 @@ require_once "process.php";
 
 // Check user session exists
 if (! isset($_SESSION['username'])) {
-    header('Location: /auth/login.php');
+    header('Location: /pages/auth/login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,10 +18,10 @@ if (! isset($_SESSION['username'])) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<?php include './../components/navbar.php'; ?>
+<?php include './../../components/navbar.php'; ?>
 
 <div class="container-lg mt-4">
-    <?php include './../components/alert.php'; ?>
+    <?php include './../../components/alert.php'; ?>
 
     <div class="mb-3 d-flex justify-content-between">
         <h1 class="fs-2">Users</h1>
@@ -87,9 +87,8 @@ if (! isset($_SESSION['username'])) {
     </table>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<?php include './../../components/admin/footer.php'; ?>
+
+<?php include './../../components/admin/scripts.php'; ?>
 </body>
 </html>

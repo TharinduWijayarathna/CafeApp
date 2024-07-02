@@ -1,5 +1,5 @@
 <?php
-require_once "./../config.php";
+require_once "./../../config.php";
 
 session_start();
 
@@ -19,12 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['register'])) {
         $_SESSION['message'] = "User registration successfully. You can login now!";
         $_SESSION['message_type'] = "success";
 
-        header("Location: /auth/login.php");
+        header("Location: /pages/auth/login.php");
     } catch (Exception $e) {
         $_SESSION['message'] = $e->getMessage();
         $_SESSION['message_type'] = "danger";
 
-        header("Location: /auth/register.php");
+        header("Location: /pages/auth/register.php");
     }
 }
 
@@ -46,23 +46,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['login'])) {
         if($isPasswordVerified) {
                 $_SESSION['username'] = $username;
 
-                header("Location: /dashboard");
+                header("Location: /pages/dashboard");
         } else {
                 $_SESSION['message'] = "Login failed.";
                 $_SESSION['message_type'] = "danger";
 
-                header("Location: /auth/login.php");
+                header("Location: /pages/auth/login.php");
         }
    } catch (Exception $e) {
        $_SESSION['message'] = $e->getMessage();
        $_SESSION['message_type'] = "danger";
 
-       header("Location: /auth/login.php");
+       header("Location: /pages/auth/login.php");
    }
 }
 
 if (isset($_GET['logout'])) {
    unset($_SESSION['username']);
-   header("Location: /auth/login.php");
+   header("Location: /pages/auth/login.php");
 }
 

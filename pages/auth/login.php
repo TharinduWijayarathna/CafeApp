@@ -18,7 +18,7 @@ session_start();
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta name="theme-color" content="#7952b3">
 
-    <link href="./../assets/css/login.css" rel="stylesheet" />
+    <link href="./../../assets/css/login.css" rel="stylesheet" />
 
 
     <style>
@@ -41,7 +41,7 @@ session_start();
   <main class="form-signin">
     <div class="d-flex justify-content-center">
         <div class="col-4 w-100">
-            <?php include './../components/alert.php'; ?>
+            <?php include './../../components/alert.php'; ?>
 
             <form action="process.php?login=true" method="POST">
               <h1 class="h3 mb-3 fw-normal">Staff Login</h1>
