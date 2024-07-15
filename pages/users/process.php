@@ -1,5 +1,5 @@
 <?php
-require_once "./../../../config.php";
+require_once "./../../config.php";
 
 session_start();
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {
          $_SESSION['message_type'] = "danger";
      }
  
-     header("Location: /users");
+     header("Location: /pages/users");
  }
 
  if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['update'])) {
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {
         $_SESSION['message_type'] = "danger";
     }
 
-    header("Location: /users");
+    header("Location: /pages/users");
 }
 
 if (isset($_GET['delete'])) {
@@ -69,5 +69,5 @@ if (isset($_GET['delete'])) {
         $_SESSION['message_type'] = "danger";
     }
 
-    header("Location: /users");
+    header("Location: /pages/users");
 }

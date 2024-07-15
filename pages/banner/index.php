@@ -23,10 +23,9 @@ require_once "./../../config.php";
                     <h1 class="h2">Banner Management</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
-                            <a href="create.php" class="btn btn-sm btn-outline-secondary">
+                            <a href="./../../pages/banner/create.php" class="btn btn-sm btn-outline-secondary">
                                 Add Banner
                             </a>
-
                         </div>
 
                     </div>
@@ -57,10 +56,10 @@ require_once "./../../config.php";
                                 <tr>
                                     <td><?php echo $banner['id']; ?></td>
                                     <td><?php echo $banner['title']; ?></td>
-                                    <td><img src="banner/uploads/<?php echo $banner['image']; ?>" width="100" alt=""></td>
+                                    <td><img src="./../../pages/banner/uploads/<?php echo $banner['image']; ?>" width="100" alt=""></td>
                                     <td>
-                                        <a href="banner/edit.php?id=<?php echo $banner['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="banner/process.php?delete=true&bannerId=<?php echo $banner['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="./../../pages/banner/edit.php?id=<?php echo $banner['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="./../../pages/banner/process.php?delete=true&bannerId=<?php echo $banner['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
