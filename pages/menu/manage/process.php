@@ -4,15 +4,17 @@ session_start();
 
 function uploadImage($file) {
     $targetDir = "uploads/";
-    $targetFile = $targetDir . basename($file["name"]);
+    $imageFileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
+    
+    // Generate a unique filename
+    $uniqueFilename = uniqid() . '.' . $imageFileType;
+    $targetFile = $targetDir . $uniqueFilename;
+    
     $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
     // Check if image file is a actual image or fake image
     $check = getimagesize($file["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
+    if ($check === false) {
         $_SESSION['message'] = "File is not an image.";
         $_SESSION['message_type'] = "danger";
         $uploadOk = 0;
@@ -44,7 +46,7 @@ function uploadImage($file) {
         return false;
     } else {
         if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-            return basename($file["name"]);
+            return $uniqueFilename;
         } else {
             $_SESSION['message'] = "Sorry, there was an error uploading your file.";
             $_SESSION['message_type'] = "danger";
@@ -52,6 +54,7 @@ function uploadImage($file) {
         }
     }
 }
+
 
 // Create menu item
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {

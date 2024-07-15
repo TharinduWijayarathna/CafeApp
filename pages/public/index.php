@@ -1,3 +1,17 @@
+<?php
+require_once './../../config.php';
+session_start();
+
+// Fetch categories
+$categoryResult = $database->query("SELECT * FROM categories");
+$categories = $categoryResult->fetch_all(MYSQLI_ASSOC);
+
+// Fetch menu highlights
+$menuResult = $database->query("SELECT * FROM menu_items LIMIT 4");
+$menuItems = $menuResult->fetch_all(MYSQLI_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -52,46 +66,17 @@
             <div class="container">
                 <h2 class="text-center mb-4">Food Categories</h2>
                 <div class="row">
+                    <?php foreach ($categories as $category) : ?>
                     <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 1">
+                           
                             <div class="card-body">
-                                <h5 class="card-title
-                                ">Category 1</h5>
-                                <p class="card-text">Description of category 1.</p>
+                                <h5 class="card-title"><?php echo htmlspecialchars($category['name']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($category['description']); ?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 2">
-                            <div class="card-body">
-                                <h5 class="card-title
-                                ">Category 2</h5>
-                                <p class="card-text">Description of category 2.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 3">
-                            <div class="card-body">
-                                <h5 class="card-title
-                                ">Category 3</h5>
-                                <p class="card-text">Description of category 3.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Category 4">
-                            <div class="card-body">
-                                <h5 class="card-title
-                                ">Category 4</h5>
-                                <p class="card-text">Description of category 4.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -102,42 +87,17 @@
             <div class="container">
                 <h2 class="text-center mb-4">Menu Highlights</h2>
                 <div class="row">
+                    <?php foreach ($menuItems as $menuItem) : ?>
                     <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 1">
+                            <img src="/pages/menu/manage/uploads/<?php echo htmlspecialchars($menuItem['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($menuItem['name']); ?>">
                             <div class="card-body">
-                                <h5 class="card-title">Dish 1</h5>
-                                <p class="card-text">Description of dish 1.</p>
+                                <h5 class="card-title"><?php echo htmlspecialchars($menuItem['name']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($menuItem['description']); ?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Dish 2</h5>
-                                <p class="card-text">Description of dish 2.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Dish 3</h5>
-                                <p class="card-text">Description of dish 3.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dish 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Dish 3</h5>
-                                <p class="card-text">Description of dish 3.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
