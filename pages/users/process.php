@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {
      $username = $_POST['username'];
      $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
  
-     $sql = "INSERT INTO user (user_id, email, first_name, last_name, username, password) VALUES ('$userId', '$email', '$firstName', '$lastName', '$username', '$password')";
+     $sql = "INSERT INTO users (id, email, first_name, last_name, username, password) VALUES ('$userId', '$email', '$firstName', '$lastName', '$username', '$password')";
  
      try {
          $database->query($sql);
@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {
 
      if (!empty($_POST['password'])) {
          $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-         $sql = "UPDATE user SET email = '$email', first_name = '$firstName', last_name = '$lastName', username = '$username', password = '$password' WHERE user_id = '$userId'";
+         $sql = "UPDATE users SET email = '$email', first_name = '$firstName', last_name = '$lastName', username = '$username', password = '$password' WHERE id = '$userId'";
      } else {
-         $sql = "UPDATE user SET email = '$email', first_name = '$firstName', last_name = '$lastName', username = '$username' WHERE user_id = '$userId'";
+         $sql = "UPDATE users SET email = '$email', first_name = '$firstName', last_name = '$lastName', username = '$username' WHERE id = '$userId'";
      }
 
     try {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['create'])) {
 if (isset($_GET['delete'])) {
     $userId = $_GET['userId'];
 
-    $sql = "DELETE FROM user WHERE user_id = '$userId'";
+    $sql = "DELETE FROM users WHERE id = '$userId'";
 
     try {
         $database->query($sql);

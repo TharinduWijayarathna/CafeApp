@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['register'])) {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user (email, first_name, last_name, username, password) VALUES ('$email', '$firstName', '$lastName', '$username', '$password')";
+    $sql = "INSERT INTO users (email, first_name, last_name, username, password) VALUES ('$email', '$firstName', '$lastName', '$username', '$password')";
 
     try {
         $database->query($sql);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['login'])) {
    $password = $_POST['password'];
 
    try {
-        $sql = "SELECT * FROM user WHERE username = '$username'";
+        $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = $database->query($sql);
 
         $row = $result->fetch_row();
