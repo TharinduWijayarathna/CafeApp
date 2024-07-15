@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header('Location: /pages/auth/login.php');
-}
-?>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

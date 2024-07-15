@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/pages/category/manage/') ? 'active' : ''; ?>" href="/pages/category/manage/">
+                <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/pages/category/') ? 'active' : ''; ?>" href="/pages/category/">
                     <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                     Categories
                 </a>
