@@ -14,9 +14,7 @@ session_start();
 
 
     <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta name="theme-color" content="#7952b3">
+    <link href="./../../assets/css/bootstrap.min.css" rel="stylesheet" />
 
     <link href="./../../assets/css/login.css" rel="stylesheet" />
 
