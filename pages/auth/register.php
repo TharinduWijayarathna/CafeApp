@@ -64,7 +64,7 @@ session_start();
                 
                 <?php include './../../components/alert.php'; ?>
 
-                <h1>Staff Registration</h1>
+                <h1>User Registration</h1>
 
                 <form method="post" action="process.php?register=true">
                     <label for="email">Email:</label>

@@ -32,6 +32,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="./../../pages/banner/manage/">
+                    <span data-feather="file" class="align-text-bottom"></span>
+                    Banners
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./../../pages/users/manage/">
                     <span data-feather="layers" class="align-text-bottom"></span>
                     Users

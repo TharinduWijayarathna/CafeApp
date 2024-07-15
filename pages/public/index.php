@@ -50,7 +50,7 @@
         <!-- Food Categories -->
         <section class="food-categories-section py-5">
             <div class="container">
-                <h2 class="text-center">Food Categories</h2>
+                <h2 class="text-center mb-4">Food Categories</h2>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
@@ -100,7 +100,7 @@
         <!-- Menu Highlights -->
         <section class="menu-highlights-section py-5">
             <div class="container">
-                <h2 class="text-center">Menu Highlights</h2>
+                <h2 class="text-center mb-4">Menu Highlights</h2>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
@@ -144,7 +144,7 @@
 
         <section class="gallery-section py-5">
             <div class="container">
-                <h2 class="text-center">Gallery</h2>
+                <h2 class="text-center mb-4">Gallery</h2>
                 <div class="row">
                     <div class="col-md-3 text-center">
                         <img src="https://via.placeholder.com/300" class="img-fluid mb-4" alt="Gallery image 1">
