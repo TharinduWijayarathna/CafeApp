@@ -1,3 +1,31 @@
+<?php
+require_once './../../config.php';
+session_start();
+
+// Fetch total orders
+$orderResult = $database->query("SELECT COUNT(*) AS total_orders FROM orders");
+$orderData = $orderResult->fetch_assoc();
+$totalOrders = $orderData['total_orders'];
+
+// Fetch total sales
+$salesResult = $database->query("SELECT SUM(menu_items.price * order_items.quantity) AS total_sales FROM orders 
+    JOIN order_items ON orders.id = order_items.order_id 
+    JOIN menu_items ON order_items.menu_item_id = menu_items.id 
+    WHERE orders.status = 'Complete'");
+$salesData = $salesResult->fetch_assoc();
+$totalSales = $salesData['total_sales'];
+
+// Fetch total users
+$userResult = $database->query("SELECT COUNT(*) AS total_users FROM users");
+$userData = $userResult->fetch_assoc();
+$totalUsers = $userData['total_users'];
+
+// Fetch total products
+$productResult = $database->query("SELECT COUNT(*) AS total_products FROM menu_items");
+$productData = $productResult->fetch_assoc();
+$totalProducts = $productData['total_products'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,134 +55,41 @@
                     </div>
                 </div>
 
-                <h2>Section title</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,004</td>
-                                <td>text</td>
-                                <td>random</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,005</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>1,006</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,007</td>
-                                <td>placeholder</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>irrelevant</td>
-                            </tr>
-                            <tr>
-                                <td>1,008</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,009</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,010</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,011</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,012</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,013</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>visual</td>
-                            </tr>
-                            <tr>
-                                <td>1,014</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,015</td>
-                                <td>random</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>text</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-header">Total Orders</div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $totalOrders; ?></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-header">Total Sales</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Rs. <?php echo number_format($totalSales, 2); ?></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-warning mb-3">
+                            <div class="card-header">Total Users</div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $totalUsers; ?></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-danger mb-3">
+                            <div class="card-header">Total Products</div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $totalProducts; ?></h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </main>
 
             <?php include './../../components/admin/footer.php'; ?>
