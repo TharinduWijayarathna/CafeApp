@@ -1,65 +1,80 @@
+<?php
+
+require_once "./../../config.php";
+
+?>
+
 <!doctype html>
 <html lang="en">
 
-<?php include './../../components/public/head.php'; ?>
+<?php include './../../components/admin/head.php'; ?>
 
 <body>
 
-    <div class="container">
-        <?php include './../../components/public/navbar.php'; ?>
-    </div>
+    <?php include './../../components/admin/navbar.php'; ?>
 
-    <main class="container">
-        <section class="booking-section py-5">
-            <div class="container">
-                <h2 class="text-center mb-4">Book a Table</h2>
-                <div class="row mt-5 mb-5">
-                    <div class="col-md-6 mb-3">
-                        <h3>About Our Booking</h3>
-                        <p>Welcome to our restaurant booking page! Here, you can easily reserve a table for your desired date and time. Whether you're planning a romantic dinner, a family gathering, or a business meeting, we are here to ensure you have a wonderful dining experience. Please fill out the form with the necessary details, and we'll take care of the rest. We look forward to serving you!</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="phone" class="form-label">Phone</label>
-                                    <input type="tel" class="form-control" id="phone" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="guests" class="form-label">Number of Guests</label>
-                                    <input type="number" class="form-control" id="guests" min="1" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="date" class="form-label">Date</label>
-                                    <input type="date" class="form-control" id="date" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="time" class="form-label">Time</label>
-                                    <input type="time" class="form-control" id="time" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Book Now</button>
-                        </form>
+    <div class="container-fluid">
+        <div class="row">
+
+            <?php include './../../components/admin/sidebar.php'; ?>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Banner Management</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <a href="create.php" class="btn btn-sm btn-outline-secondary">
+                                Add Banner
+                            </a>
+
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <?php include './../../components/public/footer.php'; ?>
-    <?php include './../../components/public/scripts.php'; ?>
+                <?php if (isset($_SESSION['message'])) : ?>
+                    <div class="alert alert-<?php echo $_SESSION['message_type']; ?>">
+                        <?php echo $_SESSION['message'];
+                        unset($_SESSION['message']); ?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $result = $database->query("SELECT * FROM banners");
+                            while ($banner = $result->fetch_assoc()) :
+                            ?>
+                                <tr>
+                                    <td><?php echo $banner['id']; ?></td>
+                                    <td><?php echo $banner['title']; ?></td>
+                                    <td><img src="banner/uploads/<?php echo $banner['image']; ?>" width="100" alt=""></td>
+                                    <td>
+                                        <a href="banner/edit.php?id=<?php echo $banner['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="banner/process.php?delete=true&bannerId=<?php echo $banner['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <?php include './../../components/admin/footer.php'; ?>
+        </div>
+    </div>
+
+
+    <?php include './../../components/admin/scripts.php'; ?>
 </body>
 
 </html>
