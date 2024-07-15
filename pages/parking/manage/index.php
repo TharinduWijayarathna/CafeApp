@@ -20,7 +20,7 @@ session_start();
                 <h1 class="h2">Parking Slot Management</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
-                        <a href="./../../pages/parking/manage/create.php" class="btn btn-sm btn-outline-secondary">
+                        <a href="../../../pages/parking/manage/create.php" class="btn btn-sm btn-outline-secondary">
                             Add Parking Slot
                         </a>
                     </div>

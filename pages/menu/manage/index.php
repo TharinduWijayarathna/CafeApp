@@ -21,7 +21,7 @@ session_start();
                 <h1 class="h2">Menu Item Management</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
-                        <a href="./../../pages/menu/manage/create.php" class="btn btn-sm btn-outline-secondary">
+                        <a href="../../../pages/menu/manage/create.php" class="btn btn-sm btn-outline-secondary">
                             Add Menu Item
                         </a>
                     </div>
