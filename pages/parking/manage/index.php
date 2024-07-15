@@ -54,8 +54,8 @@ session_start();
                                 <td><?php echo $parkingSlot['slot_number']; ?></td>
                                 <td><?php echo $parkingSlot['status']; ?></td>
                                 <td>
-                                    <a href="./../../pages/parking/manage/edit.php?id=<?php echo $parkingSlot['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="./../../pages/parking/manage/process.php?delete&id=<?php echo $parkingSlot['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="../../../pages/parking/manage/edit.php?id=<?php echo $parkingSlot['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="../../../pages/parking/manage/process.php?delete&id=<?php echo $parkingSlot['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

@@ -53,8 +53,8 @@ session_start();
                                 <td><?php echo $category['id']; ?></td>
                                 <td><?php echo $category['name']; ?></td>
                                 <td>
-                                    <a href="./../../pages/category/edit.php?id=<?php echo $category['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="./../../pages/category/process.php?delete&categoryId=<?php echo $category['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="../../../pages/category/edit.php?id=<?php echo $category['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="../../../pages/category/process.php?delete&categoryId=<?php echo $category['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

@@ -57,10 +57,10 @@ session_start();
                                 <td><?php echo $menuItem['name']; ?></td>
                                 <td><?php echo $menuItem['description']; ?></td>
                                 <td><?php echo $menuItem['price']; ?></td>
-                                <td><img src="./../../pages/menu/manage/uploads/<?php echo $menuItem['image']; ?>" alt="<?php echo $menuItem['name']; ?>" width="50"></td>
+                                <td><img src="../../../pages/menu/manage/uploads/<?php echo $menuItem['image']; ?>" alt="<?php echo $menuItem['name']; ?>" width="50"></td>
                                 <td>
-                                    <a href="./../../pages/menu/manage/edit.php?id=<?php echo $menuItem['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="./../../pages/menu/manage/process.php?delete&id=<?php echo $menuItem['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="../../../pages/menu/manage/edit.php?id=<?php echo $menuItem['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="../../../pages/menu/manage/process.php?delete&id=<?php echo $menuItem['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

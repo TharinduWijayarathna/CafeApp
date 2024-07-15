@@ -6,7 +6,7 @@
 
     $userId = $_GET['userId'];
 
-    $sql = "SELECT * FROM user WHERE user_id = '$userId'";
+    $sql = "SELECT * FROM users WHERE id = '$userId'";
 
     $result = $database->query($sql) or die($database->error);
 

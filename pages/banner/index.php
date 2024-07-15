@@ -56,10 +56,10 @@ require_once "./../../config.php";
                                 <tr>
                                     <td><?php echo $banner['id']; ?></td>
                                     <td><?php echo $banner['title']; ?></td>
-                                    <td><img src="./../../pages/banner/uploads/<?php echo $banner['image']; ?>" width="100" alt=""></td>
+                                    <td><img src="../../../pages/banner/uploads/<?php echo $banner['image']; ?>" width="100" alt=""></td>
                                     <td>
-                                        <a href="./../../pages/banner/edit.php?id=<?php echo $banner['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="./../../pages/banner/process.php?delete=true&bannerId=<?php echo $banner['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="../../../pages/banner/edit.php?id=<?php echo $banner['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="../../../pages/banner/process.php?delete=true&bannerId=<?php echo $banner['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
